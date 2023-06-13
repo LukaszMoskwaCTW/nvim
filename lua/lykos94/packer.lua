@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
   use('vim-test/vim-test')
   use('wfxr/minimap.vim')
   use('preservim/nerdtree')
+  use('voldikss/vim-floaterm')
+
 
 end)
 
