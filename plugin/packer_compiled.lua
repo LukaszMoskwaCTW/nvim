@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["minimap.vim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/minimap.vim",
+    url = "https://github.com/wfxr/minimap.vim"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -119,6 +129,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
   }
 }
 
