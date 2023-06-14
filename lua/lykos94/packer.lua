@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   use({ 'rose-pine/neovim', 
   as = 'rose-pine',
   config = function()
-	  vim.cmd('colorscheme rose-pine')
+	  -- vim.cmd('colorscheme rose-pine')
   end
   })
   use {
@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   use('preservim/nerdtree')
   use('voldikss/vim-floaterm')
   use('github/copilot.vim')
+  use('Mofiqul/vscode.nvim')
 
 
 end)
