@@ -13,6 +13,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>ww", ":q<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":Prettier<CR>:w<CR>")
+vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
 
 
 -- greatest remap ever
