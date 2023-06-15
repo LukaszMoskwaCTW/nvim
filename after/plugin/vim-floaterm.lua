@@ -1,12 +1,10 @@
 
 vim.keymap.set("n", "<leader>gg", function()
-	vim.cmd(':FloatermNew --wintype=vsplit lazygit')
+	vim.cmd(':FloatermNew --width=0.70 --wintype=vsplit  lazygit ')
 end)
--- Create a variable for the terminal 
-vim.keymap.set("n", "<C-j>", function()
-    print("heelo")
-    vim.cmd(':FloatermNew --wintype=vsplit')
+vim.keymap.set("n", "<leader>tt", function()
+	vim.cmd(':FloatermToggle')
 end)
-vim.keymap.set("t", "<C-j>", function()
-	vim.cmd(':FloatermToggle  --wintype=vsplit')
+vim.keymap.set("t", "<C-t>", function()
+	vim.cmd(':FloatermToggle')
 end)

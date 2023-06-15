@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
+  use('nvim-treesitter/nvim-treesitter-context')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -46,8 +47,14 @@ return require('packer').startup(function(use)
   use('wfxr/minimap.vim')
   use('preservim/nerdtree')
   use('voldikss/vim-floaterm')
+  use('vim-airline/vim-airline')
+  use('vim-airline/vim-airline-themes')
   use('github/copilot.vim')
+  use('prettier/vim-prettier',
+  { autoformat = 1, autoformat_require_pragma = 0 }
+  )
   use('Mofiqul/vscode.nvim')
+  use('tpope/vim-commentary')
 
 
 end)
