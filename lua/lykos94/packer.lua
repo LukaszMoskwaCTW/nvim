@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter-context')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
   use('vim-test/vim-test')
   use('wfxr/minimap.vim')
   use('preservim/nerdtree')
@@ -50,13 +49,20 @@ return require('packer').startup(function(use)
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
   use('github/copilot.vim')
-  use('prettier/vim-prettier',
-  { autoformat = 1, autoformat_require_pragma = 0 }
-  )
+  use('prettier/vim-prettier')
   use('Mofiqul/vscode.nvim')
-  use('tpope/vim-commentary')
+  use('prisma/vim-prisma')
   use('airblade/vim-gitgutter')
+  use('tpope/vim-commentary')
+  use('tpope/vim-fugitive')
+  use('tpope/vim-surround')
 
+  -- File explorer icons
+  use 'nvim-tree/nvim-web-devicons'
+  -- Git status
+  use 'lewis6991/gitsigns.nvim' 
+  -- Buffer navigation tabline
+  use 'romgrk/barbar.nvim'
 
 end)
 
