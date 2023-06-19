@@ -10,7 +10,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+-- Close a buffer
 vim.keymap.set("n", "<leader>w", ":bd<CR>")
+-- Close a buffer without saving
+vim.keymap.set("n", "<leader>W", ":bd!<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":Prettier<CR>:w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")

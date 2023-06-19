@@ -45,9 +45,10 @@ return require('packer').startup(function(use)
   use('vim-test/vim-test')
   use('wfxr/minimap.vim')
   use('preservim/nerdtree')
-  use('voldikss/vim-floaterm')
-  use('vim-airline/vim-airline')
-  use('vim-airline/vim-airline-themes')
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use('github/copilot.vim')
   use('prettier/vim-prettier')
   use('Mofiqul/vscode.nvim')
@@ -63,6 +64,12 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim' 
   -- Buffer navigation tabline
   use 'romgrk/barbar.nvim'
+  use 'ryanoasis/vim-devicons'
+  use 'christoomey/vim-tmux-navigator'
+
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
 
 end)
 
