@@ -63,7 +63,12 @@ return require('packer').startup(function(use)
   -- Git status
   use 'lewis6991/gitsigns.nvim' 
   -- Buffer navigation tabline
-  use 'romgrk/barbar.nvim'
+  --
+  use('romgrk/barbar.nvim', {
+    config = function ()
+      require'bufferline'.setup{animation = false}
+    end
+  })
   use 'ryanoasis/vim-devicons'
   use 'christoomey/vim-tmux-navigator'
 
