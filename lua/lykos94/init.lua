@@ -1,5 +1,6 @@
 require("lykos94.remap")
 require("lykos94.set")
+require("luasnip.loaders.from_snipmate").load()
 
 vim.cmd [[colorscheme vscode]]
 
