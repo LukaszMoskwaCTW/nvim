@@ -1,4 +1,4 @@
-imap <silent><expr> <C-y> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-y>' 
+imap <silent><expr> <C-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-j>' 
 
 
 

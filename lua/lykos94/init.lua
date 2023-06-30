@@ -3,6 +3,10 @@ require("lykos94.set")
 require("luasnip.loaders.from_snipmate").load()
 
 vim.cmd [[colorscheme vscode]]
+-- require('onedark').setup {
+--     style = 'deep'
+-- }
+-- require('onedark').load()
 
 vim.cmd([[
 nnoremap Q q

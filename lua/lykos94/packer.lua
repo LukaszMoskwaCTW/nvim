@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
   use('github/copilot.vim')
   use('prettier/vim-prettier')
   use('Mofiqul/vscode.nvim')
+  use 'navarasu/onedark.nvim'
   use('prisma/vim-prisma')
   use('airblade/vim-gitgutter')
   use('tpope/vim-commentary')
@@ -76,6 +77,33 @@ return require('packer').startup(function(use)
     require("toggleterm").setup()
   end}
   use "windwp/nvim-autopairs"
+
+  -- Debugger
+  use('folke/neodev.nvim')
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use 'David-Kunz/jester'
+    use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+   use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
 end)
 

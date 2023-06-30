@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>W", ":bd!<CR>")
 vim.keymap.set("n", "<leader>s", ":Prettier<CR>:w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
 
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+-- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 
 -- greatest remap ever
@@ -47,6 +47,6 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+    vim.cmd(":source $MYVIMRC<CR>")
 end)
 
