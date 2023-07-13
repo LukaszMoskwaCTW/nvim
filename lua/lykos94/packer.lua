@@ -9,12 +9,22 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({ 'rose-pine/neovim', 
-  as = 'rose-pine',
-  config = function()
-	  -- vim.cmd('colorscheme rose-pine')
-  end
-  })
+  -- use({ 'rose-pine/neovim', 
+  -- as = 'rose-pine',
+  -- config = function()
+	  -- -- vim.cmd('colorscheme rose-pine')
+  -- end
+  -- })
+  use "rebelot/kanagawa.nvim"
+  use {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup({
+        filter = "pro",
+      })
+    end
+  }
+  -- use { "ellisonleao/gruvbox.nvim" }
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
@@ -77,6 +87,26 @@ return require('packer').startup(function(use)
     require("toggleterm").setup()
   end}
   use "windwp/nvim-autopairs"
+
+  use {
+    'topaxi/gh-actions.nvim',
+    cmd = 'GhActions',
+    requires = {'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim'},
+    config = function()
+      require('gh-actions').setup({})
+    end,
+  }
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function ()
+      -- require"octo".setup()
+    end
+  }
 
   -- Debugger
   use('folke/neodev.nvim')

@@ -94,6 +94,15 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["gh-actions.nvim"] = {
+    commands = { "GhActions" },
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15gh-actions\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/opt/gh-actions.nvim",
+    url = "https://github.com/topaxi/gh-actions.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -108,6 +117,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/jester",
     url = "https://github.com/David-Kunz/jester"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -134,6 +148,12 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/minimap.vim",
     url = "https://github.com/wfxr/minimap.vim"
   },
+  ["monokai-pro.nvim"] = {
+    config = { "\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vfilter\bpro\nsetup\16monokai-pro\frequire\0" },
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
+    url = "https://github.com/loctvl842/monokai-pro.nvim"
+  },
   ["neodev.nvim"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/neodev.nvim",
@@ -143,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -184,6 +209,12 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["octo.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0" },
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/octo.nvim",
+    url = "https://github.com/pwntester/octo.nvim"
+  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -203,12 +234,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["rose-pine"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
-    loaded = true,
-    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -282,26 +307,47 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: octo.nvim
+time([[Config for octo.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
+time([[Config for octo.nvim]], false)
+-- Config for: monokai-pro.nvim
+time([[Config for monokai-pro.nvim]], true)
+try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vfilter\bpro\nsetup\16monokai-pro\frequire\0", "config", "monokai-pro.nvim")
+time([[Config for monokai-pro.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'GhActions', function(cmdargs)
+          require('packer.load')({'gh-actions.nvim'}, { cmd = 'GhActions', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'gh-actions.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('GhActions ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
