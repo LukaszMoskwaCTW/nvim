@@ -134,6 +134,9 @@ return require('packer').startup(function(use)
       }
     end
   }
+  -- Add support for scala
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+
 
 end)
 
