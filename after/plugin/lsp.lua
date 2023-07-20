@@ -53,7 +53,14 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+
 lsp.setup()
+vim.keymap.set("n", "<leader>lr", function()
+  -- TODO : Check why this is not working as expected
+  print("Restarting LSP")
+  vim.cmd(':LspStop')
+  vim.cmd(':LspStart')
+end)
 
 vim.diagnostic.config({
     virtual_text = true
