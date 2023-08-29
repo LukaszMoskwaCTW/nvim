@@ -134,6 +134,19 @@ return require('packer').startup(function(use)
       }
     end
   }
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "cat ~/.openai",
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
   -- Add support for scala
   use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 

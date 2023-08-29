@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>w", ":bd<CR>")
 -- Close a buffer without saving
 vim.keymap.set("n", "<leader>W", ":bd!<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
-vim.keymap.set("n", "<leader>s", ":Prettier<CR>:w<CR>")
+vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
 
 -- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")

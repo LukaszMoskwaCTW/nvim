@@ -20,3 +20,6 @@ let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#prose_wrap = 'never'
 let g:prettier#config#html_whitespace_sensitivity = 'ignore'
 let g:prettier#config#vue_indent_script_and_style = 'true'
+
+let g:prettier#config#jsx_bracket_same_line = get(g:,'prettier#config#jsx_bracket_same_line', 'false')
+
