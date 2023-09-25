@@ -156,8 +156,12 @@ vim.keymap.set("n", "<leader>gpc", function()
 	vim.cmd(':Octo pr create')
 end)
 
-vim.keymap.set("n", "<leader>grr", function()
+vim.keymap.set("n", "<leader>grs", function()
 	vim.cmd(':Octo review start')
+end)
+
+vim.keymap.set("n", "<leader>grr", function()
+	vim.cmd(':Octo review resume')
 end)
 
 vim.keymap.set("n", "<leader>gre", function()
