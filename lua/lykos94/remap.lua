@@ -13,7 +13,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Close a buffer
 vim.keymap.set("n", "<leader>w", ":bd<CR>")
 -- Close a buffer without saving
-vim.keymap.set("n", "<leader>W", ":bd!<CR>")
+-- vim.keymap.set("n", "<leader>W", ":bd!<CR>")
+-- Close all buffers except the current one
+vim.keymap.set("n", "<leader>W", ":BufferCloseAllButCurrent<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")

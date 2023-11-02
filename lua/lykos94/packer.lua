@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
   use('Mofiqul/vscode.nvim')
   use 'navarasu/onedark.nvim'
   use('prisma/vim-prisma')
-  use('airblade/vim-gitgutter')
+  use('mhinz/vim-signify')
   use('tpope/vim-commentary')
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
@@ -134,19 +134,6 @@ return require('packer').startup(function(use)
       }
     end
   }
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "cat ~/.openai",
-      })
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
   -- Add support for scala
   use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 
