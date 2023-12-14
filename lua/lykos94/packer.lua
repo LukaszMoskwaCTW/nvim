@@ -87,6 +87,51 @@ return require('packer').startup(function(use)
   end}
   use "windwp/nvim-autopairs"
 
+
+  use {
+    "chrishrb/gx.nvim",
+    event = "BufEnter",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("gx").setup {
+        -- open_browser_app = "os_specific",
+        -- open_browser_args = { "--background" },
+        handlers = {
+          -- plugin = true,
+          -- github = true,
+          -- brewfile = true,
+          -- package_json = true,
+          search = true,
+        },
+        handler_options = {
+          search_engine = "google",
+          -- search_engine_url = "https://search.brave.com/search?q=",
+        },
+      }
+    end,
+  }
+
+  use {
+    'kawre/leetcode.nvim',
+    requires = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim'
+    },
+    build = {
+      run = ':TSUpdate html',
+    },
+    config = function()
+      require('leetcode').setup({
+        arg = 'l',
+        -- directory = '$HOME/.leetcode',
+        lang = 'javascript',
+        -- workspace = '/Users/mofiqulislam/leetcode',
+        -- workspace = '/Users/mofiqulislam/leetcode',
+        -- workspace = '/Users/mofiqulislam/leetcode
+      })
+    end,
+  }
   use {
     'topaxi/gh-actions.nvim',
     cmd = 'GhActions',
