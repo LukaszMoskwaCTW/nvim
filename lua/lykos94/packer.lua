@@ -5,14 +5,14 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- use({ 'rose-pine/neovim', 
+  -- use({ 'rose-pine/neovim',
   -- as = 'rose-pine',
   -- config = function()
-	  -- -- vim.cmd('colorscheme rose-pine')
+  -- -- vim.cmd('colorscheme rose-pine')
   -- end
   -- })
   use "rebelot/kanagawa.nvim"
@@ -26,28 +26,33 @@ return require('packer').startup(function(use)
   }
   -- use { "ellisonleao/gruvbox.nvim" }
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},             -- Required
-		  {                                      -- Optional
-		  'williamboman/mason.nvim',
-		  run = function()
-			  pcall(vim.cmd, 'MasonUpdate')
-		  end,
-	  },
-	  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      {                            -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-	  -- Autocompletion
-	  {'hrsh7th/nvim-cmp'},     -- Required
-	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-	  {'L3MON4D3/LuaSnip'},     -- Required
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
+    }
   }
-}
 
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    -- commit = '364b86ec8ea88e4a77ba676b93fb10829d6a9cb3',
+    run = ':TSUpdate'
+  }
+
   use('nvim-treesitter/playground')
   use('nvim-treesitter/nvim-treesitter-context')
   use('mbbill/undotree')
@@ -74,17 +79,25 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   -- Buffer navigation tabline
   --
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+  --
   use('romgrk/barbar.nvim', {
-    config = function ()
-      require'bufferline'.setup{animation = false}
+    config = function()
+      require 'bufferline'.setup { animation = false }
     end
   })
   use 'ryanoasis/vim-devicons'
   use 'christoomey/vim-tmux-navigator'
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
-  end}
+  end }
   use "windwp/nvim-autopairs"
 
 
@@ -111,6 +124,9 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use('RishabhRD/popfix')
+  use('RishabhRD/nvim-cheat.sh')
+
   use {
     'kawre/leetcode.nvim',
     requires = {
@@ -135,28 +151,24 @@ return require('packer').startup(function(use)
   use {
     'topaxi/gh-actions.nvim',
     cmd = 'GhActions',
-    requires = {'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim'},
+    requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
     config = function()
       require('gh-actions').setup({})
     end,
   }
-  use {
-    'pwntester/octo.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function ()
-      -- require"octo".setup()
-    end
-  }
+  use "bluz71/vim-nightfly-colors"
+  use "catppuccin/nvim"
+  use "NLKNguyen/papercolor-theme"
+  use "folke/tokyonight.nvim"
+  use "romainl/Apprentice"
+  use 'AlexvZyl/nordic.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- Debugger
   use('folke/neodev.nvim')
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use 'David-Kunz/jester'
-    use {
+  use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
@@ -167,7 +179,7 @@ return require('packer').startup(function(use)
       }
     end
   }
-   use {
+  use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
@@ -179,8 +191,8 @@ return require('packer').startup(function(use)
     end
   }
   -- Add support for scala
-  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+  use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 
-
+  use "elentok/format-on-save.nvim"
+  use "$HOME/git/depscope"
 end)
-

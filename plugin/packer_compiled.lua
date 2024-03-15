@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  Apprentice = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/Apprentice",
+    url = "https://github.com/romainl/Apprentice"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -94,6 +99,16 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  depscope = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/depscope",
+    url = "/Users/ctw/git/depscope"
+  },
+  ["format-on-save.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/format-on-save.nvim",
+    url = "https://github.com/elentok/format-on-save.nvim"
+  },
   ["gh-actions.nvim"] = {
     commands = { "GhActions" },
     config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15gh-actions\frequire\0" },
@@ -107,6 +122,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["gx.nvim"] = {
     config = { "\27LJ\2\nƒ\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\20handler_options\1\0\1\18search_engine\vgoogle\rhandlers\1\0\0\1\0\1\vsearch\2\nsetup\agx\frequire\0" },
@@ -127,7 +147,7 @@ _G.packer_plugins = {
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["leetcode.nvim"] = {
-    config = { "\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\barg\6l\tlang\15javascript\nsetup\rleetcode\frequire\0" },
+    config = { "\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\tlang\15javascript\barg\6l\nsetup\rleetcode\frequire\0" },
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/leetcode.nvim",
     url = "https://github.com/kawre/leetcode.nvim"
@@ -173,15 +193,36 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["nordic.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nordic.nvim",
+    url = "https://github.com/AlexvZyl/nordic.nvim"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["null-ls.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fnull-ls\frequire\0" },
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-cheat.sh"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh",
+    url = "https://github.com/RishabhRD/nvim-cheat.sh"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -223,12 +264,6 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["octo.nvim"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
-    loaded = true,
-    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/octo.nvim",
-    url = "https://github.com/pwntester/octo.nvim"
-  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -239,6 +274,11 @@ _G.packer_plugins = {
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["papercolor-theme"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
+  },
   playground = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/playground",
@@ -248,6 +288,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/popfix",
+    url = "https://github.com/RishabhRD/popfix"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -265,6 +310,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0" },
@@ -291,6 +341,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-nightfly-colors"] = {
+    loaded = true,
+    path = "/Users/ctw/.local/share/nvim/site/pack/packer/start/vim-nightfly-colors",
+    url = "https://github.com/bluz71/vim-nightfly-colors"
   },
   ["vim-prettier"] = {
     loaded = true,
@@ -334,26 +389,26 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "octo.nvim")
-time([[Config for octo.nvim]], false)
+-- Config for: leetcode.nvim
+time([[Config for leetcode.nvim]], true)
+try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\tlang\15javascript\barg\6l\nsetup\rleetcode\frequire\0", "config", "leetcode.nvim")
+time([[Config for leetcode.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: leetcode.nvim
-time([[Config for leetcode.nvim]], true)
-try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\barg\6l\tlang\15javascript\nsetup\rleetcode\frequire\0", "config", "leetcode.nvim")
-time([[Config for leetcode.nvim]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
+time([[Config for null-ls.nvim]], false)
 -- Config for: monokai-pro.nvim
 time([[Config for monokai-pro.nvim]], true)
 try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vfilter\bpro\nsetup\16monokai-pro\frequire\0", "config", "monokai-pro.nvim")
 time([[Config for monokai-pro.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

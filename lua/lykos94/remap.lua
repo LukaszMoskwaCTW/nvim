@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -16,6 +15,8 @@ vim.keymap.set("n", "<leader>w", ":bd<CR>")
 -- vim.keymap.set("n", "<leader>W", ":bd!<CR>")
 -- Close all buffers except the current one
 vim.keymap.set("n", "<leader>W", ":BufferCloseAllButCurrent<CR>")
+-- Reopen the last closed buffer, shift + t
+vim.keymap.set("n", "<leader><S-t>", ":e #<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
@@ -27,10 +28,10 @@ vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -49,6 +50,5 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mw", "<cmd>set wrap!<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd(":source $MYVIMRC<CR>")
+  vim.cmd(":source $MYVIMRC<CR>")
 end)
-
