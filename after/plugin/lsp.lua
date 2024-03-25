@@ -1,45 +1,36 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
+local notify = require("notify")
 
-lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
+local vim = vim
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'tsserver',
+    'rust_analyzer',
+    'volar'
+  },
+  handlers = {
+    lsp_zero.default_setup,
+  }
 })
-
--- Fix Undefined global 'vim'
-lsp.nvim_workspace()
 
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
+local cmp_format = lsp_zero.cmp_format()
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+lsp_zero.on_attach(function(client, bufnr)
+  -- Print
+  -- notify({
+  --   client.name
+  -- }, "info", {
+  --   title = "LSP 1",
+  --   timeout = 100,
+  -- })
+  local opts = { buffer = bufnr, remap = false }
+  vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
-})
-
-lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -54,15 +45,44 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 
-lsp.setup()
-vim.keymap.set("n", "<leader>lr", function()
-  -- TODO : Check why this is not working as expected
-  print("Restarting LSP")
-  vim.cmd(':LspStop')
-  vim.cmd(':LspStart')
-end)
-
-vim.diagnostic.config({
-    virtual_text = true
+-- lsp_zero.setup()
+cmp.setup({
+  formatting = cmp_format,
+  mapping = cmp.mapping.preset.insert({
+    -- scroll up and down the documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-1),
+    ['<C-d>'] = cmp.mapping.scroll_docs(1),
+    -- Select completion by pressing enter
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  }),
 })
 
+vim.diagnostic.config({
+  virtual_text = true
+})
+
+-- Specific LSP configuration to make Volar work with typescript support
+require 'lspconfig'.volar.setup {
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+  init_options = {
+    typescript = {
+      tsdk = '/opt/local/lib/node_modules/typescript/lib'
+    }
+  }
+}
+require 'lspconfig'.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/opt/local/lib/node_modules/@vue/typescript-plugin",
+        languages = { "javascript", "typescript", "vue" },
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+}

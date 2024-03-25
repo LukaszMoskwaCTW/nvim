@@ -1,6 +1,6 @@
 require("lykos94.remap")
 require("lykos94.set")
-require("luasnip.loaders.from_snipmate").load()
+-- require("luasnip.loaders.from_snipmate").load()
 require("lykos94.telepackages")
 
 vim.cmd([[colorscheme monokai-pro-spectrum]])
