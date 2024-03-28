@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-commentary')
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
+  use('chentoast/marks.nvim')
 
   -- File explorer icons
   use 'nvim-tree/nvim-web-devicons'
