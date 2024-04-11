@@ -1,3 +1,4 @@
+local vim = vim
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -20,6 +21,7 @@ vim.keymap.set("n", "<leader><S-t>", ":e #<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
+vim.keymap.set("n", "<leader>rr", ":e<CR>")
 
 -- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
@@ -28,6 +30,7 @@ vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
+
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
