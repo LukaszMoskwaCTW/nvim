@@ -144,5 +144,16 @@ return require('packer').startup(function(use)
   -- Add support for scala
   use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 
+
+  -- use('sheerun/vim-polyglot')
+  use('JoosepAlviste/nvim-ts-context-commentstring')
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+
+  }
+
   use "$HOME/git/depscope"
 end)
