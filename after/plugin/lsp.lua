@@ -1,5 +1,5 @@
 local lsp_zero = require("lsp-zero")
-local notify = require("notify")
+-- local notify = require("notify")
 
 
 local vim = vim
@@ -9,6 +9,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',
     'rust_analyzer',
+    'gopls',
     'volar'
   },
   handlers = {

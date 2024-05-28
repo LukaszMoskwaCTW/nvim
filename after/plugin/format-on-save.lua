@@ -37,6 +37,7 @@ format_on_save.setup({
     -- vue = formatters.prettierd,
     yaml = formatters.lsp,
     dockerfile = formatters.docker,
+    go = formatters.lsp
 
     -- Add your own shell formatters:
     -- vue = formatters.shell({

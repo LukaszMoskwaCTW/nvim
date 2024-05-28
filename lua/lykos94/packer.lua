@@ -106,9 +106,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Notification
-  use 'rcarriga/nvim-notify'
-
   -- Test
   use('vim-test/vim-test')
   use 'David-Kunz/jester'
