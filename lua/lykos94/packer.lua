@@ -4,6 +4,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
     -- or                            , branch = '0.1.x',
@@ -129,7 +130,6 @@ return require('packer').startup(function(use)
   }
   use {
     "folke/trouble.nvim",
-    branch = "dev",
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
@@ -141,6 +141,12 @@ return require('packer').startup(function(use)
   }
   -- Add support for scala
   use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
+  use({
+    'echasnovski/mini.nvim',
+    config = function()
+      require("mini.notify").setup()
+    end
+  })
 
 
   -- use('sheerun/vim-polyglot')
