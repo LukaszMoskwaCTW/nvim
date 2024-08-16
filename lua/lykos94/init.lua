@@ -2,7 +2,7 @@ require("lykos94.remap")
 require("lykos94.set")
 -- require("luasnip.loaders.from_snipmate").load()
 
-vim.cmd([[colorscheme monokai-pro-spectrum]])
+vim.cmd([[colorscheme monokai-pro-machine]])
 
 -- Set the cursorline
 vim.cmd([[set cursorline]])
