@@ -1,5 +1,9 @@
 vim.cmd.packadd("packer.nvim")
 
+
+vim.cmd [[packadd packer.nvim]]
+
+
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
@@ -63,13 +67,13 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	-- Buffer navigation tabline
 	--
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("null-ls").setup()
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
+	-- use({
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	config = function()
+	-- 		require("null-ls").setup()
+	-- 	end,
+	-- 	requires = { "nvim-lua/plenary.nvim" },
+	-- })
 	--
 	use("romgrk/barbar.nvim", {
 		config = function()
@@ -115,7 +119,15 @@ return require("packer").startup(function(use)
 	use("David-Kunz/jester")
 
 	-- Formatter
-	use("elentok/format-on-save.nvim")
+	-- use("elentok/format-on-save.nvim")
+	require("packer").startup(function()
+		use({
+			"stevearc/conform.nvim",
+			config = function()
+				require("conform").setup()
+			end,
+		})
+	end)
 	use("prettier/vim-prettier")
 
 	-- Debugger
@@ -157,6 +169,22 @@ return require("packer").startup(function(use)
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
+		end,
+	})
+
+	-- Xcode
+	use({
+		"wojciech-kulik/xcodebuild.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("xcodebuild").setup({
+				code_coverage = {
+					enable = true,
+				},
+			})
 		end,
 	})
 
