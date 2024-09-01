@@ -1,11 +1,8 @@
 return {
-	"wbthomason/packer.nvim",
 	"nvim-lua/plenary.nvim",
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		-- or                            , branch = '0.1.x',
-		dependencies = { { "nvim-lua/plenary.nvim" } },
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	"loctvl842/monokai-pro.nvim",
 	{
@@ -13,28 +10,18 @@ return {
 		branch = "v3.x",
 		dependencies = {
 			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
-			{
-				"williamboman/mason.nvim",
-			},
-			{
-				"williamboman/mason-lspconfig.nvim",
-			},
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "L3MON4D3/LuaSnip" }, -- Required
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"hrsh7th/nvim-cmp", -- Required
+			"hrsh7th/cmp-nvim-lsp", -- Required
+			"L3MON4D3/LuaSnip", -- Required
 		},
-	},
-
-	{
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
 	},
 
 	"nvim-treesitter/nvim-treesitter-context",
 	"mbbill/undotree",
-	"preservim/nerdtree",
+	"nvim-tree/nvim-tree.lua",
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -102,16 +89,5 @@ return {
 
 	-- 'sheerun/vim-polyglot')
 	"JoosepAlviste/nvim-ts-context-commentstring",
-	{
-		"numToStr/Comment.nvim",
-	},
-
-	-- Xcode
-	{
-		"wojciech-kulik/xcodebuild.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	},
+	"numToStr/Comment.nvim",
 }

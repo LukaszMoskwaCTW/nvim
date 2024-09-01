@@ -25,7 +25,6 @@ vim.keymap.set("n", "<leader>rr", ":e<CR>")
 
 -- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -49,9 +48,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mw", "<cmd>set wrap!<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>")
+vim.keymap.set("n", "<leader>mw", "<cmd>set wrap!<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd(":source $MYVIMRC<CR>")
+	vim.cmd(":source $MYVIMRC<CR>")
 end)

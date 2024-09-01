@@ -2,6 +2,11 @@ require("xcodebuild").setup({
 	code_coverage = {
 		enable = true,
 	},
+	integrations = {
+		nvim_tree = {
+			guess_target = false,
+		},
+	},
 })
 vim.keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<cr>", { desc = "Toggle Xcodebuild Logs" })
 vim.keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<cr>", { desc = "Build Project" })

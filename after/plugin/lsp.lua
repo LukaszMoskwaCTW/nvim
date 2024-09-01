@@ -10,6 +10,7 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"gopls",
 		"volar",
+		"ruff",
 	},
 	handlers = {
 		lsp_zero.default_setup,
@@ -78,12 +79,16 @@ vim.diagnostic.config({
 	virtual_text = true,
 })
 
+local npm_prefix = vim.fn.system("npm prefix -g")
+npm_prefix = string.gsub(npm_prefix, "\n", "")
+
 -- Specific LSP configuration to make Volar work with typescript support
 require("lspconfig").volar.setup({
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 	init_options = {
 		typescript = {
-			tsdk = "/opt/local/lib/node_modules/typescript/lib",
+			-- tsdk = "/opt/homebrew/lib/node_modules/typescript/lib",
+			tsdk = npm_prefix .. "/lib/node_modules/typescript/lib",
 		},
 	},
 })
@@ -92,7 +97,8 @@ require("lspconfig").tsserver.setup({
 		plugins = {
 			{
 				name = "@vue/typescript-plugin",
-				location = "/opt/local/lib/node_modules/@vue/typescript-plugin",
+				-- location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin",
+				location = npm_prefix .. "/lib/node_modules/@vue/typescript-plugin",
 				languages = { "javascript", "typescript", "vue" },
 			},
 		},
