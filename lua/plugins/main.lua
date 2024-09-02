@@ -79,6 +79,7 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
+		tag = "v3.6.0",
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
 	-- Add support for scala

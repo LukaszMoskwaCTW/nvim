@@ -8,6 +8,8 @@ require("conform").setup({
 		-- Conform will run the first available formatter
 		vue = { "prettierd", "prettier", stop_after_first = true },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		typescriptreact = { "tsserver", "prettierd", "prettier", stop_after_first = true },
+
 		swift = { "swiftformat" },
 	},
 	format_on_save = {
