@@ -7,7 +7,7 @@ return {
 	"loctvl842/monokai-pro.nvim",
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
+		branch = "v4.x",
 		dependencies = {
 			-- LSP Support
 			"neovim/nvim-lspconfig",
@@ -72,7 +72,6 @@ return {
 	"prettier/vim-prettier",
 
 	-- Debugger
-	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",

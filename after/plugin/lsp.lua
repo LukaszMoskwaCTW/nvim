@@ -1,33 +1,8 @@
 local lsp_zero = require("lsp-zero")
--- local notify = require("notify")
 
 local vim = vim
 
-require("mason").setup({})
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"tsserver",
-		"rust_analyzer",
-		"gopls",
-		"volar",
-		"ruff",
-	},
-	handlers = {
-		lsp_zero.default_setup,
-	},
-})
-
-local cmp = require("cmp")
-local cmp_format = lsp_zero.cmp_format()
-
-lsp_zero.on_attach(function(client, bufnr)
-	-- Print
-	-- notify({
-	--   client.name
-	-- }, "info", {
-	--   title = "LSP 1",
-	--   timeout = 100,
-	-- })
+local lsp_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 
@@ -61,29 +36,23 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
-end)
-
--- lsp_zero.setup()
-cmp.setup({
-	formatting = cmp_format,
-	mapping = cmp.mapping.preset.insert({
-		-- scroll up and down the documentation window
-		["<C-u>"] = cmp.mapping.scroll_docs(-1),
-		["<C-d>"] = cmp.mapping.scroll_docs(1),
-		-- Select completion by pressing enter
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
-})
-
-vim.diagnostic.config({
-	virtual_text = true,
-})
+end
 
 local npm_prefix = vim.fn.system("npm prefix -g")
 npm_prefix = string.gsub(npm_prefix, "\n", "")
 
 -- Specific LSP configuration to make Volar work with typescript support
-require("lspconfig").volar.setup({
+local lspconfig = require("lspconfig")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+lsp_zero.extend_lspconfig({
+	sign_text = true,
+	lsp_attach = lsp_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.volar.setup({
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 	init_options = {
 		typescript = {
@@ -92,7 +61,7 @@ require("lspconfig").volar.setup({
 		},
 	},
 })
-require("lspconfig").tsserver.setup({
+lspconfig.ts_ls.setup({
 	init_options = {
 		plugins = {
 			{
@@ -110,9 +79,32 @@ require("lspconfig").tsserver.setup({
 	},
 })
 
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
-local capabilities = cmp_nvim_lsp.default_capabilities()
+lspconfig.pyright.setup({
+	root_dir = function(fname)
+		return require("lspconfig").util.root_pattern(".git")(fname)
+			or require("lspconfig").util.root_pattern("pyproject.toml")(fname)
+			or require("lspconfig").util.root_pattern("setup.py")(fname)
+			or require("lspconfig").util.root_pattern("setup.cfg")(fname)
+			or require("lspconfig").util.root_pattern("requirements.txt")(fname)
+			or require("lspconfig").util.root_pattern("Pipfile")(fname)
+			or require("lspconfig").util.root_pattern("poetry.lock")(fname)
+			or require("lspconfig").util.root_pattern("pyrightconfig.json")(fname)
+	end,
+})
+
+lspconfig.ruff.setup({
+	root_dir = function(fname)
+		return require("lspconfig").util.root_pattern(".git")(fname)
+			or require("lspconfig").util.root_pattern("pyproject.toml")(fname)
+			or require("lspconfig").util.root_pattern("setup.py")(fname)
+			or require("lspconfig").util.root_pattern("setup.cfg")(fname)
+			or require("lspconfig").util.root_pattern("requirements.txt")(fname)
+			or require("lspconfig").util.root_pattern("Pipfile")(fname)
+			or require("lspconfig").util.root_pattern("poetry.lock")(fname)
+			or require("lspconfig").util.root_pattern("pyrightconfig.json")(fname)
+	end,
+})
+
 local opts = { noremap = true, silent = true }
 local on_attach = function(_, bufnr)
 	opts.buffer = bufnr
@@ -124,7 +116,19 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 end
 
-lspconfig["sourcekit"].setup({
+lspconfig.sourcekit.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+})
+
+require("mason").setup({})
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"ts_ls",
+		"rust_analyzer",
+		"gopls",
+		"volar",
+		"ruff",
+		"pyright",
+	},
 })

@@ -16,6 +16,7 @@ return {
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_snipmate").lazy_load()
 
 		cmp.setup({
 			completion = {
@@ -27,11 +28,11 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 				["<C-b>"] = cmp.mapping(function(fallback)
 					if luasnip.jumpable(-1) then
 						luasnip.jump(-1)

@@ -1,0 +1,27 @@
+
+snippet bs Binary search
+  def bs(arr, x):
+      l, r = 0, len(arr) - 1
+      while l <= r:
+          mid = (l + r) // 2
+          if arr[mid] == x:
+              return mid
+          elif arr[mid] < x:
+              l = mid + 1
+          else:
+              r = mid - 1
+      return -1
+
+snippet gcd Greatest common divisor
+  def gcd(a, b):
+      while b:
+          a, b = b, a % b
+      return a
+
+snippet primes Get prime numbers in range
+  def primes(n):
+      sieve = [True] * (n + 1)
+      for p in range(2, int(n ** 0.5) + 1):
+          if sieve[p]:
+              sieve[p * p: n + 1: p] = [False] * len(sieve[p * p: n + 1: p])
+      return [p for p in range(2, n + 1) if sieve[p]]
