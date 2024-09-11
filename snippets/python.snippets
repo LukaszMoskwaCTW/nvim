@@ -25,3 +25,22 @@ snippet primes Get prime numbers in range
           if sieve[p]:
               sieve[p * p: n + 1: p] = [False] * len(sieve[p * p: n + 1: p])
       return [p for p in range(2, n + 1) if sieve[p]]
+
+
+snippet binlen Get the length in bit of a number
+  def binlen(num):
+    tot = 0
+    while num:
+        tot += 1
+        num >>= 1
+    return tot or 1
+
+
+snippet binstr Bin to Str with zfill
+  def binstr(num, newlen=None):
+      val = str(bin(num))[2:]
+      if newlen:
+          return val.zfill(newlen)
+      return val
+
+
