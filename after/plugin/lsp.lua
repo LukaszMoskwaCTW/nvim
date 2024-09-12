@@ -53,20 +53,13 @@ lsp_zero.extend_lspconfig({
 })
 
 lspconfig.volar.setup({
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-	init_options = {
-		typescript = {
-			-- tsdk = "/opt/homebrew/lib/node_modules/typescript/lib",
-			tsdk = npm_prefix .. "/lib/node_modules/typescript/lib",
-		},
-	},
+	filetypes = { "vue" },
 })
 lspconfig.ts_ls.setup({
 	init_options = {
 		plugins = {
 			{
 				name = "@vue/typescript-plugin",
-				-- location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin",
 				location = npm_prefix .. "/lib/node_modules/@vue/typescript-plugin",
 				languages = { "javascript", "typescript", "vue" },
 			},
@@ -74,7 +67,9 @@ lspconfig.ts_ls.setup({
 	},
 	filetypes = {
 		"javascript",
+		"javascriptreact",
 		"typescript",
+		"typescriptreact",
 		"vue",
 	},
 })

@@ -54,3 +54,5 @@ vim.keymap.set("n", "<leader>mw", "<cmd>set wrap!<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd(":source $MYVIMRC<CR>")
 end)
+
+vim.keymap.set("n", "<leader>kk", "<cmd>!python3 %<CR>")

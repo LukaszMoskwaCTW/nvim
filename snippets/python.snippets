@@ -52,3 +52,24 @@ snippet strmask Str to int mask
             res = (1 << value) | res
 
         return res
+
+
+snippet printmat Print a matrix
+  def printmat(mat):
+      res = ""
+      for el in mat:
+          res += str(el) + "\n"
+      print(res)
+
+
+snippet printll Print a linked list
+  def printll(head):
+      res = []
+      curr = head
+      while curr:
+          res.append(curr.val)
+          curr = curr.next
+
+      print(res)
+
+
