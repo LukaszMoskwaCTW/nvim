@@ -44,3 +44,11 @@ snippet binstr Bin to Str with zfill
       return val
 
 
+snippet strmask Str to int mask
+    def strmask(input_str):
+        res = 0
+        for char in input_str:
+            value = ord(char) - ord("a")
+            res = (1 << value) | res
+
+        return res
