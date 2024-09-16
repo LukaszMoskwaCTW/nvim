@@ -21,7 +21,16 @@ return {
 
 	"nvim-treesitter/nvim-treesitter-context",
 	"mbbill/undotree",
-	"nvim-tree/nvim-tree.lua",
+	-- "nvim-tree/nvim-tree.lua",
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },

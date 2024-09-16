@@ -17,7 +17,6 @@
 
 local dapui = require("dapui")
 vim.keymap.set("n", "<leader>dap", function()
-	vim.cmd(":NvimTreeClose")
 	dapui.toggle()
 end, { noremap = true })
 

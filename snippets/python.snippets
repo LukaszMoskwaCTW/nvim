@@ -73,3 +73,15 @@ snippet printll Print a linked list
       print(res)
 
 
+snippet directions Get the 4 directions
+  dirs = [(-1,0),(1,0), (0,1), (0,-1)]
+  for yy, xx in dirs:
+    dy = yy + y
+    dx = xx + x
+
+    if dy < 0 or dx < 0 or dy >= rows or dx >= rows:
+      continue
+
+
+
+

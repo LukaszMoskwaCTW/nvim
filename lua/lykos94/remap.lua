@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader><S-t>", ":e #<CR>")
 -- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabe<CR>")
-vim.keymap.set("n", "<leader>rr", ":e<CR>")
+vim.keymap.set("n", "<leader>rr", ":e<CR>:LspRestart<CR>")
 
 -- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
