@@ -78,8 +78,6 @@ return {
 	{
 		"echasnovski/mini.nvim",
 	},
-
-	-- 'sheerun/vim-polyglot')
 	-- Comments in .vue files (template, css, ts)
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	-- Commenting
