@@ -21,7 +21,6 @@ return {
 
 	"nvim-treesitter/nvim-treesitter-context",
 	"mbbill/undotree",
-	-- "nvim-tree/nvim-tree.lua",
 	{
 		"stevearc/oil.nvim",
 		---@module 'oil'
@@ -31,10 +30,6 @@ return {
 		-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 	},
-	--[[ {
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-	}, ]]
 	"github/copilot.vim",
 	"prisma/vim-prisma",
 	"mhinz/vim-signify",
@@ -48,19 +43,8 @@ return {
 	-- Git status
 	"lewis6991/gitsigns.nvim",
 	-- Buffer navigation tabline
-	--
-	-- {
-	-- 	"nvimtools/none-ls.nvim",
-	-- 	config = function()
-	-- 		require("null-ls").setup()
-	-- 	end,
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- })
-	--
 	"romgrk/barbar.nvim",
-	"ryanoasis/vim-devicons",
 	"christoomey/vim-tmux-navigator",
-	"akinsho/toggleterm.nvim",
 	"windwp/nvim-autopairs",
 
 	{
@@ -73,7 +57,6 @@ return {
 	},
 	-- Test
 	"vim-test/vim-test",
-	"David-Kunz/jester",
 
 	-- Formatter
 	-- "elentok/format-on-save.nvim")
