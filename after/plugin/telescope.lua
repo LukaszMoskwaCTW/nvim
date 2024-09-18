@@ -18,8 +18,10 @@ require("telescope").setup({
 })
 
 vim.keymap.set("n", "<leader>pf", builtin.git_files, {})
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-vim.keymap.set("n", "<C-l>", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<leader>jj", function()
+vim.keymap.set("n", "<C-p>", ":Telescope find_files theme=ivy<CR>")
+vim.keymap.set("n", "<C-l>", ":Telescope buffers theme=ivy<CR>")
+vim.keymap.set("n", "<leader>jj", ":Telescope live_grep theme=ivy<CR>")
+
+vim.keymap.set("n", "<leader>JJ", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
