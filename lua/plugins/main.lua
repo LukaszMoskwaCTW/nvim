@@ -31,14 +31,14 @@ return {
 		-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 	},
-	{
+	--[[ {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-	},
+	}, ]]
 	"github/copilot.vim",
 	"prisma/vim-prisma",
 	"mhinz/vim-signify",
-	"tpope/vim-commentary",
+	-- "tpope/vim-commentary",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
 	"chentoast/marks.nvim",
@@ -78,7 +78,7 @@ return {
 	-- Formatter
 	-- "elentok/format-on-save.nvim")
 	"stevearc/conform.nvim",
-	"prettier/vim-prettier",
+	-- "prettier/vim-prettier",
 
 	-- Debugger
 	{
@@ -97,6 +97,8 @@ return {
 	},
 
 	-- 'sheerun/vim-polyglot')
+	-- Comments in .vue files (template, css, ts)
 	"JoosepAlviste/nvim-ts-context-commentstring",
+	-- Commenting
 	"numToStr/Comment.nvim",
 }
