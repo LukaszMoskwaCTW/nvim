@@ -87,6 +87,15 @@ lspconfig.pyright.setup({
 	end,
 })
 
+lspconfig.gopls.setup({
+	cmd = { "gopls", "serve" },
+	root_dir = function(fname)
+		return require("lspconfig").util.root_pattern(".git")(fname)
+			or require("lspconfig").util.root_pattern("go.mod")(fname)
+			or require("lspconfig").util.root_pattern("go.sum")(fname)
+	end,
+})
+
 lspconfig.ruff.setup({
 	root_dir = function(fname)
 		return require("lspconfig").util.root_pattern(".git")(fname)
