@@ -8,6 +8,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", n
 vim.keymap.set("n", "<leader>dac", function()
 	require("dap").clear_breakpoints()
 end)
+vim.keymap.set("n", "<leader>daa", ":DapShowLog<CR>")
 vim.keymap.set("n", "<leader>dal", function()
 	require("dap").list_breakpoints()
 end)

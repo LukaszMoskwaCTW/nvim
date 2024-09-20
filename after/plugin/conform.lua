@@ -17,6 +17,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 
 		typescript = { "prettierd" },
+		json = { "prettierd" },
 		typescriptreact = { "ts_ls", "prettierd", "prettier", stop_after_first = true },
 
 		swift = { "swiftformat" },
