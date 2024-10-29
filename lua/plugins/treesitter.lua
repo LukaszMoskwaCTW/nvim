@@ -16,6 +16,7 @@ return {
 				"json",
 				"latex",
 				"lua",
+				"hcl",
 				"python",
 				"rust",
 				"typescript",

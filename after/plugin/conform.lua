@@ -18,7 +18,9 @@ require("conform").setup({
 
 		typescript = { "prettierd" },
 		json = { "prettierd" },
-		typescriptreact = { "ts_ls", "prettierd", "prettier", stop_after_first = true },
+		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+		markdown = { "prettierd" },
+		hcl = { "terraform" },
 
 		swift = { "swiftformat" },
 	},
