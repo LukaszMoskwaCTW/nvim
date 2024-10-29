@@ -2,25 +2,6 @@ local lsp_zero = require("lsp-zero")
 
 local vim = vim
 
--- Helper function to check file size
-local function file_size_is_too_big(bufnr)
-	local max_filesize = 1001 -- Set limit to 11,000 lines
-	local line_count = vim.api.nvim_buf_line_count(bufnr)
-	if line_count > max_filesize then
-		return true
-	end
-	return false
-end
-
-local function custom_on_init(client, bufnr)
-	if file_size_is_too_big(bufnr) then
-		-- Stop the LSP from attaching to this buffer
-		client.stop()
-		print("File too big for LSP (" .. line_count .. " lines)")
-		return
-	end
-end
-
 local lsp_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
@@ -79,7 +60,7 @@ lspconfig.ts_ls.setup({
 		plugins = {
 			{
 				name = "@vue/typescript-plugin",
-				location = npm_prefix .. "/lib/node_modules/@vue/typescript-plugin",
+				location = npm_prefix .. "/lib/node_modules/@vue/language-server",
 				languages = { "javascript", "typescript", "vue" },
 			},
 		},
@@ -140,9 +121,19 @@ local on_attach = function(_, bufnr)
 end
 
 lspconfig.sourcekit.setup({
-	capabilities = capabilities,
+	root_dir = function(fname)
+		return require("lspconfig").util.root_pattern(".git")(fname)
+			or require("lspconfig").util.root_pattern("Project.swift")(fname)
+	end,
+	capabilities = {
+		workspace = {
+			didChangeWatchedFiles = {
+				dynamicRegistration = true,
+			},
+		},
+	},
+
 	on_attach = on_attach,
-	on_init = custom_on_init,
 })
 
 require("mason").setup({})

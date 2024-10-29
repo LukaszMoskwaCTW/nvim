@@ -41,7 +41,7 @@ require("oil").setup({
 		end,
 		-- Sort file names in a more intuitive order for humans. Is less performant,
 		-- so you may want to set to false if you work with large directories.
-		natural_order = true,
+		natural_order = false,
 		-- Sort file and directory names case insensitive
 		case_insensitive = false,
 		sort = {
@@ -53,6 +53,6 @@ require("oil").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>ee", vim.cmd.Oil)
+vim.keymap.set("n", "<leader>ee", "<cmd>Oil <CR>")
 -- vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle)
 -- vim.keymap.set("n", "<leader>er", vim.cmd.NvimTreeFindFile)
