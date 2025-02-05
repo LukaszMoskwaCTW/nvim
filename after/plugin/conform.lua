@@ -13,12 +13,12 @@ require("conform").setup({
 		-- You can customize some of the format options for the filetype (:help conform.format)
 		rust = { "rustfmt", lsp_format = "fallback" },
 		-- Conform will run the first available formatter
-		vue = { "prettierd", "prettier", stop_after_first = true },
-		javascript = { "prettierd", "prettier", stop_after_first = true },
+		vue = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
+		javascript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
 
-		typescript = { "prettierd" },
-		json = { "prettierd" },
-		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "eslint_d", "prettierd", stop_after_first = true },
+		json = { "eslint_d", "prettierd", stop_after_first = true },
+		typescriptreact = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
 		markdown = { "prettierd" },
 		hcl = { "terraform" },
 

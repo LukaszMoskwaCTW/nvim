@@ -107,6 +107,18 @@ lspconfig.ruff.setup({
 			or require("lspconfig").util.root_pattern("poetry.lock")(fname)
 			or require("lspconfig").util.root_pattern("pyrightconfig.json")(fname)
 	end,
+	-- Check the configuration file in the folder
+	--[[ settings = {
+		pyright = {
+			disableOrganizeImports = true, -- Using Ruff
+		},
+		python = {
+			analysis = {
+				ignore = { "*" }, -- Using Ruff
+				typeCheckingMode = "off", -- Using mypy
+			},
+		},
+	}, ]]
 })
 
 local opts = { noremap = true, silent = true }

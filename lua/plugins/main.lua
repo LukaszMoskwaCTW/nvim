@@ -20,7 +20,6 @@ return {
 	},
 
 	"nvim-treesitter/nvim-treesitter-context",
-	"mbbill/undotree",
 	{
 		"stevearc/oil.nvim",
 		---@module 'oil'
@@ -36,12 +35,9 @@ return {
 	-- "tpope/vim-commentary",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
-	"chentoast/marks.nvim",
 
 	-- File explorer icons
 	"nvim-tree/nvim-web-devicons",
-	-- Git status
-	"lewis6991/gitsigns.nvim",
 	-- Buffer navigation tabline
 	"romgrk/barbar.nvim",
 	"christoomey/vim-tmux-navigator",
@@ -74,7 +70,6 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
 	-- Add support for scala
-	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 	{
 		"echasnovski/mini.nvim",
 	},
