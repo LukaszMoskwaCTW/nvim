@@ -5,6 +5,8 @@ require("monokai-pro").setup({
 	filter = "pro",
 })
 
+-- vim.cmd([[set notermguicolors]])
+vim.cmd([[set notermguicolors]])
 vim.cmd([[colorscheme monokai-pro-spectrum]])
 
 -- Set the cursorline
