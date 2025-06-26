@@ -36,21 +36,10 @@ return {
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
 
-	-- File explorer icons
-	"nvim-tree/nvim-web-devicons",
 	-- Buffer navigation tabline
 	"romgrk/barbar.nvim",
 	"christoomey/vim-tmux-navigator",
 	"windwp/nvim-autopairs",
-
-	{
-		"kawre/leetcode.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	},
 	-- Test
 	"vim-test/vim-test",
 

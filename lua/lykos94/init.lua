@@ -23,6 +23,27 @@ vim.cmd([[autocmd InsertEnter * highlight Visual guibg=#B5BD68 guifg=#000000]])
 -- Set the g_copilot variable to 1
 vim.cmd([[let g:copilot_enabled = 0]])
 
+-- Allow to copy the lines in the Visual mode
+vim.keymap.set("v", "<leader>cp", function()
+	local filepath = vim.fn.expand("%")
+	local start_line = vim.fn.line("v")
+	local end_line = vim.fn.line(".")
+
+	if start_line > end_line then
+		start_line, end_line = end_line, start_line
+	end
+
+	local lines = {}
+	for i = start_line, end_line do
+		local content = vim.fn.getline(i)
+		table.insert(lines, string.format("%s %d: %s", filepath, i, content))
+	end
+
+	local result = table.concat(lines, "\n")
+	vim.fn.setreg("+", result)
+	print("Copied " .. #lines .. " lines to clipboard")
+end, { noremap = true, silent = true })
+
 vim.cmd([[
 nnoremap Q q
 nnoremap q <Nop>

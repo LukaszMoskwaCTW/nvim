@@ -1,4 +1,5 @@
 local lsp_zero = require("lsp-zero")
+local util = require("lspconfig.util")
 
 local vim = vim
 
@@ -52,9 +53,28 @@ lsp_zero.extend_lspconfig({
 	capabilities = capabilities,
 })
 
+local volar_init_options = {
+	typescript = {
+		tsdk = "",
+	},
+}
+
 lspconfig.volar.setup({
 	filetypes = { "vue" },
+	cmd = { "vue-language-server", "--stdio" },
+	root_dir = util.root_pattern("package.json"),
+	init_options = volar_init_options,
+	on_new_config = function(new_config, new_root_dir)
+		if
+			new_config.init_options
+			and new_config.init_options.typescript
+			and new_config.init_options.typescript.tsdk == ""
+		then
+			new_config.init_options.typescript.tsdk = util.get_typescript_server_path(new_root_dir)
+		end
+	end,
 })
+
 lspconfig.ts_ls.setup({
 	init_options = {
 		plugins = {
@@ -154,7 +174,6 @@ require("mason-lspconfig").setup({
 		"ts_ls",
 		"rust_analyzer",
 		"gopls",
-		"volar",
 		"ruff",
 		"pyright",
 	},
