@@ -20,9 +20,6 @@ vim.cmd([[autocmd InsertLeave * highlight CursorLine guibg=#B5BD68 guifg=#000000
 -- Change also the color of selected text to green
 vim.cmd([[autocmd InsertEnter * highlight Visual guibg=#B5BD68 guifg=#000000]])
 
--- Set the g_copilot variable to 1
-vim.cmd([[let g:copilot_enabled = 0]])
-
 -- Allow to copy the lines in the Visual mode
 vim.keymap.set("v", "<leader>cp", function()
 	local filepath = vim.fn.expand("%")

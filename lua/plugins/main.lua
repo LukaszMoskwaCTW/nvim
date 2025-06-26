@@ -29,7 +29,6 @@ return {
 		-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 	},
-	"github/copilot.vim",
 	"prisma/vim-prisma",
 	"mhinz/vim-signify",
 	-- "tpope/vim-commentary",
